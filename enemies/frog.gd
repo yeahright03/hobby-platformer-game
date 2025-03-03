@@ -50,6 +50,8 @@ func _on_playercollision_body_entered(body: Node2D) -> void:
 		death()
 
 func death():
+	get_node("player-death/CollisionShape2D").set_deferred("disabled", true)
+	get_node("player-collision/CollisionShape2D").set_deferred("disabled", true)
 	velocity.x = 0
 	chase = false
 	game.gold += 5

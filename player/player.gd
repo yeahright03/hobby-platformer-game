@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor():
 		if not (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left")) and is_on_wall():
 			pass
+# if the extra jumps exceed zero then the function may proceed
 		elif extra_jumps > 0:
 			anim.play("jump")
 			if is_on_wall():

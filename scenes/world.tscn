@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bhi6rxrjqyf1i" path="res://assets/sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_2ct8w"]
 [ext_resource type="Script" path="res://scripts/bg.gd" id="1_d8qih"]
-[ext_resource type="PackedScene" uid="uid://d50sp1p5lgct" path="res://player/player.tscn" id="1_yy1re"]
 [ext_resource type="Texture2D" uid="uid://c1ed0ycsaeohd" path="res://assets/homebrewn/keyboard-tileset.png" id="2_1l0db"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_81174"]
 [ext_resource type="Texture2D" uid="uid://dqodhm1idg5l" path="res://assets/Sunny Land Collection Files/Sunny Land Collection Files/Assets/Environments/Forest of Illusion/Forest of Illusion Expansion Pack/Layers/back.png" id="2_bokm8"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://syr8cq41wots" path="res://assets/Sunny Land Collection Files/Sunny Land Collection Files/Assets/Environments/Forest of Illusion/Forest of Illusion Expansion Pack/Layers/front.png" id="4_3fmba"]
 [ext_resource type="PackedScene" uid="uid://cwycyghm5hb6k" path="res://enemies/frog.tscn" id="8_1ycii"]
 [ext_resource type="PackedScene" uid="uid://cn26xhg07pglr" path="res://collectables/acorn.tscn" id="9_b7kg5"]
+[ext_resource type="PackedScene" uid="uid://coqi51o4q8j0s" path="res://player/player-green.tscn" id="9_ghskh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_akrs2"]
 texture = ExtResource("1_2ct8w")
@@ -304,8 +304,8 @@ texture = ExtResource("4_3fmba")
 
 [node name="player" type="Node2D" parent="."]
 
-[node name="player" parent="player" instance=ExtResource("1_yy1re")]
-position = Vector2(73, 480)
+[node name="player" parent="player" instance=ExtResource("9_ghskh")]
+position = Vector2(72, 479)
 script = ExtResource("2_81174")
 
 [node name="enemies" type="Node2D" parent="."]
@@ -336,7 +336,7 @@ position = Vector2(225, 468)
 position = Vector2(1041, 468)
 
 [node name="acorn5" parent="collectables" instance=ExtResource("9_b7kg5")]
-position = Vector2(1263, 472)
+position = Vector2(1263, 468)
 
 [node name="acorn6" parent="collectables" instance=ExtResource("9_b7kg5")]
 position = Vector2(1165, 208)
@@ -355,6 +355,9 @@ position = Vector2(1429, 443)
 
 [node name="acorn11" parent="collectables" instance=ExtResource("9_b7kg5")]
 position = Vector2(1457, 443)
+
+[node name="acorn12" parent="collectables" instance=ExtResource("9_b7kg5")]
+position = Vector2(1648, 369)
 
 [node name="ui" type="CanvasLayer" parent="."]
 
@@ -377,8 +380,5 @@ theme_override_colors/font_color = Color(0.936528, 0.769599, 0.830689, 1)
 theme_override_font_sizes/font_size = 24
 text = "Gold: 10"
 script = SubResource("GDScript_3jxd8")
-
-[node name="acorn" parent="." instance=ExtResource("9_b7kg5")]
-position = Vector2(1648, 369)
 
 [connection signal="timeout" from="collectables/Timer" to="collectables" method="_on_timer_timeout"]

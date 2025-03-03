@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://coqi51o4q8j0s"]
+[gd_scene load_steps=33 format=3 uid="uid://coqi51o4q8j0s"]
 
 [ext_resource type="Texture2D" uid="uid://dcnpl01krhdi8" path="res://assets/Sunny Land Collection Files/Sunny Land Collection Files/Assets/Characters/Players/Foxy/Spritesheet.png" id="1_erwbp"]
 [ext_resource type="Texture2D" uid="uid://2hxns3inohq3" path="res://assets/homebrewn/green-guy-player.png" id="2_5k4bk"]
+[ext_resource type="AudioStream" uid="uid://detqbe2td4e1d" path="res://assets/brackeys_platformer_assets/sounds/jump.wav" id="3_p56dg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abvyf"]
 radius = 8.0
@@ -370,6 +371,7 @@ position = Vector2(2.38419e-07, -11)
 scale = Vector2(1.375, 1.375)
 sprite_frames = SubResource("SpriteFrames_21xol")
 animation = &"idle"
+frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -55)
@@ -383,3 +385,7 @@ libraries = {
 "": SubResource("AnimationLibrary_418jy")
 }
 autoplay = "idle"
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_p56dg")
+volume_db = -30.0
